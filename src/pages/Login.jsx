@@ -10,6 +10,7 @@ const Login = () => {
     const navigate = useNavigate()
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
+
     useEffect(()=>{
         if(firebase.isLoggedIn){
             navigate('/')
@@ -53,3 +54,4 @@ const Login = () => {
     )
 }
 export default Login
+

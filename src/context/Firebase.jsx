@@ -6,6 +6,8 @@ import {
     onAuthStateChanged,
     signInWithEmailAndPassword,
     signInWithPopup,
+    query,
+    where,
 } from "firebase/auth";
 
 import { addDoc, collection, getFirestore, getDocs, getDoc } from "firebase/firestore";

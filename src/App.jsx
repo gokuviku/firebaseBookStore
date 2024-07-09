@@ -7,8 +7,9 @@ import Detail from './pages/Detail'
 import Home from './pages/Home'
 import ListingPage from './pages/List'
 import Login from './pages/Login'
-import Register from './pages/Register'
 import Order from './pages/Order'
+import Register from './pages/Register'
+import ViewOrderDetail from './pages/ViewOrderDetail'
 
 function App() {
 
@@ -23,6 +24,8 @@ function App() {
           <Route path='/book/list' element={<ListingPage />} />
           <Route path='/book/view/:bookId' element={<Detail />} />
            <Route path='/book/orders' element={<Order />} />
+          <Route path='/books/orders/:bookId' element={<ViewOrderDetail />} />
+
         </Routes>
       </div>
     </>

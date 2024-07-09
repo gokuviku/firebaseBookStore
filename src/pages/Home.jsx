@@ -14,7 +14,7 @@ const Home = () => {
     return (
         <div className='container mt-5  '>List Books HERE
             {books.map((book) => (
-                <Card key={book.id} id={book.id} {...book.data()} />
+                <Card link={`/book/view/${book.id}`} key={book.id} id={book.id} {...book.data()} />
             ))}
         </div>
     )

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import { useFirebase } from "../context/Firebase"
 import Button from "react-bootstrap/"
+import Form from 'react-bootstrap/Form';
 
 const Detail = () => {
     const [data, setData] = useState(null)
@@ -26,6 +27,10 @@ const Detail = () => {
 
     if (data == null) return <h1>Loading...</h1>
 
+    const placeOrder = async ()=>{
+       const res = firebase.placeOrder(params.bookId,qty) 
+    }
+
     return (
         <div className="container" >
             <h1>{data.name}</h1>
@@ -37,9 +42,15 @@ const Detail = () => {
             <p>Name : {data.displayName}</p>
             <p>Email : {data.email}</p>
 
+             <Form.Group className="mb-3" controlId="formBasicPassword">
+                    <Form.Label>QTY</Form.Label>
+
+                    <Form.Control type="Number"
+                        onChange={(e) => setQty(e.target.value)}
+                        value={qty} required />
+                </Form.Group>
             
-            
-            <Button variant ="success" >Buy Now</Button>
+            <Button variant ="success" onClick={placeOrder} >Buy Now</Button>
 
         </div>
     )

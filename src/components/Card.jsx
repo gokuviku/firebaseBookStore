@@ -8,8 +8,8 @@ import { useNavigate } from 'react-router-dom';
 
 const Card = (props) => {
     const firebase = useFirebase()
-    const [url, setUrl] = useState(null)
     const navigate = useNavigate()
+    const [url, setUrl] = useState(null)
 
     useEffect(() => {
         firebase.getImageURL(props.imageURL)
@@ -24,10 +24,10 @@ const Card = (props) => {
                     <Card.Title>{props.name}</Card.Title>
                     <Card.Text>
                         this book title is {props.name}
-                        this book is sold by {props.diplayName}
+                        this book is sold by {props.displayName}
                         this books costs {props.price}
                     </Card.Text>
-                    <Button onClick={e => navigate(`/book/view/${props.id}`)} variant="primary">View</Button>
+                    <Button onClick={e => navigate(props.link)} variant="primary">View</Button>
                 </Card.Body>
             </Card>
         </CardGroup>
